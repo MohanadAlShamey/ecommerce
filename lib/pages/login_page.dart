@@ -59,10 +59,18 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: InkWell(
-                  onTap: () {
+                  onTap: (){
                     if(frm.currentState.validate()){
                         Api api =Api();
-                        api.login(usernameController.text, passwordController.text);
+                      api.login(usernameController.text, passwordController.text).then((res){
+                        if(res==null){
+
+                        }else{
+
+                        }
+
+                      });
+
                     }
                   },
                   child: Container(
